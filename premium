@@ -398,7 +398,7 @@ local function ExecuteCommand(Pid,msg)
 			end
 			if CheckCMD(Split[1],"kill") then
 				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
-					GetHum(plr):ChangeState(14)
+					GetHum(plr):ChangeState(15)
 				end
 			end
 			if CheckCMD(Split[1],"lag") then
