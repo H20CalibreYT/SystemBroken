@@ -33,6 +33,7 @@ local BrokenVip = {
 	880364999,
 	3744663511,
 	122933265,
+	2997408992,
 }
 --Tier 2 List
 local BrokenPremium = {
@@ -64,6 +65,7 @@ local BrokenPremium = {
 	880364999,
 	3744663511,
 	122933265,
+	2997408992,
 }
 
 local BrokenStaff = {
