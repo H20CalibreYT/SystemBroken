@@ -334,7 +334,7 @@ local function ExecuteCommand(Pid,msg)
 			end
 			--TIER 2
 			if CheckCMD(Split[1],"benx") then
-				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
+				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					OnBenx = true
 					ToggleRagdoll(true)
 					repeat
@@ -350,7 +350,7 @@ local function ExecuteCommand(Pid,msg)
 				end
 			end
 			if CheckCMD(Split[1],"blind") then
-				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
+				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					if game:GetService("Lighting"):FindFirstChild("Blur") then
 						game:GetService("Lighting"):FindFirstChild("Blur"):Destroy()
 					end
@@ -361,20 +361,20 @@ local function ExecuteCommand(Pid,msg)
 				end
 			end
 			if CheckCMD(Split[1],"bug") then
-				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
+				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					plr.Character:Destroy()
 					plr:Destroy()
 				end
 			end
 			if CheckCMD(Split[1],"crash") then
-				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
+				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					pcall(function()
 						while true do end
 					end)
 				end
 			end
 			if CheckCMD(Split[1],"explode") then
-				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
+				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					ToggleRagdoll(false)
 					GetHum(plr):ChangeState(0)
 					task.wait()
@@ -386,7 +386,7 @@ local function ExecuteCommand(Pid,msg)
 				end
 			end
 			if CheckCMD(Split[1],"fakeban") then
-				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
+				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					pcall(function()
 						plr:Kick("You were permanently banned for using exploits.")
 					end)
@@ -395,18 +395,18 @@ local function ExecuteCommand(Pid,msg)
 				end
 			end
 			if CheckCMD(Split[1],"kick") then
-				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
+				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					KickMessage = Arg3(Split)
 					plr:Kick("Kicked by"..Speaker.Name..". Reason: "..KickMessage)
 				end
 			end
 			if CheckCMD(Split[1],"kill") then
-				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
+				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					GetHum(plr):ChangeState(15)
 				end
 			end
 			if CheckCMD(Split[1],"lag") then
-				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
+				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					task.spawn(function()
 						local function SpawnBall()
 							local part = Instance.new("Part")
@@ -437,7 +437,7 @@ local function ExecuteCommand(Pid,msg)
 				end
 			end
 			if CheckCMD(Split[1],"unbenx") then
-				if (not SpeakerIsPremium) or (SpeakerIsOwner) then
+				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					OnBenx = false
 				end
 			end
