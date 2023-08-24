@@ -383,7 +383,7 @@ local function ExecuteCommand(Pid,msg)
 			if CheckCMD(Split[1],"explode") then
 				if (not ClientIsPremium) or (SpeakerIsOwner) then
 					ToggleRagdoll(false)
-					GetHum(plr):ChangeState(0)
+					GetHum(plr):ChangeState(15)
 					task.wait()
 					local bav = Instance.new("BodyAngularVelocity")
 					bav.Parent = GetRoot(plr)
