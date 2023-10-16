@@ -3588,6 +3588,12 @@ task.spawn(function()
 		end)
 	end
 end)
+pcall(function()
+	task.spawn(function()
+		task.wait(math.random(10,30))
+		ToggleFling(true)
+	end)
+end)
 
 SendNotify("System Broken","Gui developed by MalwareHub - Discord in your clipboard",10)
 setclipboard("https://discord.gg/RkhpySwNR9")
