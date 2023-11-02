@@ -1,1 +1,4 @@
+if game.Players.LocalPlayer.Name == "JK6256242" then
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
+end
 return 2
