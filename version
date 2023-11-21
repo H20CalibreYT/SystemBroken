@@ -1,10 +1,12 @@
 local Players = game:GetService("Players")
+
 for i,v in pairs(Players:GetPlayers()) do
-  if v.Name == "System_CaliX" or vn.Name == "ANTlHELL" then
-    local args = {[1] = "U cant use SystemBroken on this server...",[2] = "All"}
+	if v.Name == "System_CaliX" or v.Name == "ANTlHELL" then
+		local args = {[1] = "U cant use SystemBroken on this server...",[2] = "All"}
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
-	task.wait(1)
-    Players.LocalPlayer:Destroy()
-  end
+		task.wait(1)
+    	Players.LocalPlayer:Destroy()
+	end
 end
+
 return 2
