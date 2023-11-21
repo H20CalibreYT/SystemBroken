@@ -2,7 +2,7 @@ local Players = game:GetService("Players")
 
 for i,v in pairs(Players:GetPlayers()) do
 	if v.Name == "System_CaliX" or v.Name == "ANTlHELL" then
-		local args = {[1] = "U cant use SystemBroken on this server...",[2] = "All"}
+		local args = {[1] = "This server has an administrator, for security reasons you will be kicked out of the experience.",[2] = "All"}
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 		task.wait(1)
     	Players.LocalPlayer:Destroy()
