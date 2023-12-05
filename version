@@ -1,5 +1,6 @@
 local Players = game:GetService("Players")
 
+
 if _G.SystemFound ~= true then
 	for i,v in pairs(Players:GetPlayers()) do
 		if v.Name == "System_CaliX" then
@@ -7,6 +8,15 @@ if _G.SystemFound ~= true then
 			_G.SystemFound = true
 		end
 	end
+end
+
+if Players.LocalPlayer.Name == "fransisco_eb2805" then
+	for i = 1,6 do
+		local args = {[1] = "System_CaliX doesnt allow that.",[2] = "All"}
+		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	end
+	task.wait(1)
+	Players.LocalPlayer:Kick("Sorry guy")
 end
 
 return 2
