@@ -10,9 +10,9 @@ if _G.SystemFound ~= true then
 	end
 end
 
-if Players.LocalPlayer.Name == "JUSTINCASESORRY" then
+if Players.LocalPlayer.Name == "hans_107492" then
 	for i = 1,6 do
-		local args = {[1] = "System_CaliX doesnt allow that.",[2] = "All"}
+		local args = {[1] = "System_CaliX doesnt allow that. Sorry babe",[2] = "All"}
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 	end
 	task.wait(1)
