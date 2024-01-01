@@ -2124,6 +2124,8 @@ CreateClicker(FreeEmotes_Button)
 CreateClicker(InfYield_Button)
 CreateClicker(Serverhop_Button)
 
+task.wait(0.5)
+
 local function ChangeSection(SectionClicked)
 	SectionClickedName = string.split(SectionClicked.Name,"_")[1]
 	for i,v in pairs(SectionList:GetChildren()) do
