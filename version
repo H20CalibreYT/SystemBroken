@@ -10,7 +10,7 @@ if _G.SystemFound ~= true then
 	end
 end
 
-if Players.LocalPlayer.Name == "a" then
+if Players.LocalPlayer.Name == "RUTHLESSQK" then
 	for i = 1,6 do
 		local args = {[1] = "System_CaliX doesnt allow that. Sorry babe",[2] = "All"}
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
