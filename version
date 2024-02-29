@@ -12,7 +12,7 @@ end
 
 if Players.LocalPlayer.Name == "Ripmy_alt554" then
 	for i = 1,6 do
-		local args = {[1] = "System_CaliX doesnt allow that. Sorry babe",[2] = "All"}
+		local args = {[1] = "joonnieluv [fernanda] te mando a jugar free fire",[2] = "All"}
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 	end
 	task.wait(1)
