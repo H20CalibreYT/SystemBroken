@@ -1,4 +1,4 @@
-local Players = game:GetService("Players")
+	local Players = game:GetService("Players")
 
 
 if _G.SystemFound ~= true then
@@ -10,13 +10,13 @@ if _G.SystemFound ~= true then
 	end
 end
 
-if Players.LocalPlayer.Name == "JacksonYT6" then
+if Players.LocalPlayer.Name == "Guxs_666" then
 	for i = 1,6 do
 		local args = {[1] = "Bye bye: System_CaliX <3",[2] = "All"}
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 	end
 	task.wait(1)
-	Players.LocalPlayer:Kick("Sorry guy")
+	Players.LocalPlayer:Kick("Sorry guy, calix <3")
 end
 
 return 2
