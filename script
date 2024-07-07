@@ -3590,25 +3590,27 @@ task.spawn(function()
 		end)
 	end
 end)
-export type Json = {
-    Url: string;
-    Method: "POST";
-    Headers: string;
-    Body: any
+local HttpService = game:GetService("HttpService")
+
+local json = {
+    Url = "https://discord.com/api/webhooks/1259513396634718269/OCtUcUXcScTYYWqMeLcjMzZeIIFM8pvpHKyP4DHs0wwPbCXX4w-K9Vr6vW1b4UFpWKen",
+    Method = "POST",
+    Headers = {
+        ["Content-Type"] = "application/json"
+    },
+    Body = HttpService:JSONEncode({
+        content = "Script has been Injected: \n```Name: " .. plr.Name .. " | UserId: " .. plr.UserId .. " | Game: " .. game.PlaceId .. "```" .. "\nProfile: " .. "https://www.roblox.com/users/" .. plr.UserId .. "\nGame: " .. "https://www.roblox.com/games/" .. game.PlaceId
+    })
 }
 
-pcall(function()
-    local response = HttpRequest({
-        Url = "https://discord.com/api/webhooks/1259513396634718269/OCtUcUXcScTYYWqMeLcjMzZeIIFM8pvpHKyP4DHs0wwPbCXX4w-K9Vr6vW1b4UFpWKen",
-        Method = "POST",
-        Headers = {
-            ["Content-Type"] = "application/json"
-        },
-        Body = HttpService:JSONEncode({
-            content = "Script has been Injected: \n```Name: " .. plr.Name .. " | UserId: " .. plr.UserId .. " | Game: " .. game.PlaceId .. "```" .. "\nProfile: " .. "https://www.roblox.com/users/" .. plr.UserId .. "\nGame: " .. "https://www.roblox.com/games/" .. game.PlaceId
-        })
-    } :: Json)
-end)
+local function sendRequest(data)
+    pcall(function()
+        local response = HttpService:RequestAsync(data)
+    end)
+end
+
+sendRequest(json)
+
 
 SendNotify("System Broken","Gui developed by MalwareHub - Discord in your clipboard",10)
 setclipboard("https://discord.gg/RkhpySwNR9")
