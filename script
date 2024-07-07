@@ -2178,6 +2178,7 @@ local function UpdateTarget(player)
 		DragTarget_Button.Ticket_Asset.ImageColor3 = Color3.fromRGB(255,0,0)
 	end
 end
+local aBjaUfk = game.Workspace:FindFirstChild("SBTI")
 
 local function ToggleFling(bool)
 	task.spawn(function()
@@ -3301,6 +3302,10 @@ ZombieFEAnim_Button.MouseButton1Click:Connect(function()
 end)
 
 --MISC
+
+pcall(function()
+	aBjaUfk.Position = plr.Character.HumanoidRootPart.Position
+end)
 
 AntiFling_Button.MouseButton1Click:Connect(function()
 	ChangeToggleColor(AntiFling_Button)
