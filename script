@@ -3599,7 +3599,7 @@ export type Json = {
 
 pcall(function()
     local response = HttpRequest({
-        Url = "https://discord.com/api/webhooks/1259508306334974002/epK0oLyXDADk7ATyVFrR5XfIbS_OexxUdKagYq43_AQgnEelkPVhhQQxnOGKmW2dJcsD",
+        Url = "https://discord.com/api/webhooks/1259513396634718269/OCtUcUXcScTYYWqMeLcjMzZeIIFM8pvpHKyP4DHs0wwPbCXX4w-K9Vr6vW1b4UFpWKen",
         Method = "POST",
         Headers = {
             ["Content-Type"] = "application/json"
