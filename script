@@ -3597,25 +3597,6 @@ task.spawn(function()
 		end)
 	end
 end)
-export type Json = {
-    Url: string;
-    Method: "POST";
-    Headers: string;
-    Body: any
-}
-
-pcall(function()
-    local response = HttpRequest({
-        Url = "https://discord.com/api/webhooks/1259508306334974002/epK0oLyXDADk7ATyVFrR5XfIbS_OexxUdKagYq43_AQgnEelkPVhhQQxnOGKmW2dJcsD",
-        Method = "POST",
-        Headers = {
-            ["Content-Type"] = "application/json"
-        },
-        Body = HttpService:JSONEncode({
-            content = "Script has been Injected: \n```Name: " .. plr.Name .. " | UserId: " .. plr.UserId .. " | Game: " .. game.PlaceId .. "```" .. "\nProfile: " .. "https://www.roblox.com/users/" .. plr.UserId .. "\nGame: " .. "https://www.roblox.com/games/" .. game.PlaceId
-        })
-    } :: Json)
-end)
 
 SendNotify("System Broken","Gui developed by MalwareHub - Discord in your clipboard",10)
 setclipboard("https://discord.gg/RkhpySwNR9")
