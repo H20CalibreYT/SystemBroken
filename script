@@ -3508,41 +3508,6 @@ plr.CharacterAdded:Connect(function(x)
 			x["RagdollMe"].Disabled = false
 		end)
 	end)
-	task.wait(1)
-	local appearance = players:GetCharacterAppearanceAsync(plr.UserId)
-	local original_accs = {}
-	local accs = {}
-	for i,acc in pairs(appearance:GetChildren()) do --Save original accessoryes
-		if acc:IsA("Accessory") then
-			table.insert(original_accs, acc.Name)
-		end
-	end
-	for i,acc in pairs(plr.Character:GetChildren()) do --Save player accessoryes
-		if acc:IsA("Accessory") then
-			table.insert(accs, acc.Name)
-		end
-	end
-	
-	local original_ammount = #original_accs
-	local ammount = #accs
-	if ammount == original_ammount then
-		local count = 0
-		for i,v in pairs(accs) do
-			if table.find(original_accs, v) then
-				count = count+1
-			end
-		end
-		if not (count == original_ammount) then
-			SysBroker:Destroy()
-			SendNotify("System Broken","An unexpected error occurred, re-joining...")
-			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
-		end
-	else
-		SysBroker:Destroy()
-		SendNotify("System Broken","An unexpected error occurred, re-joining...")
-		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
-	end
-	appearance:Destroy()
 end)
 
 task.spawn(function()
@@ -3567,34 +3532,6 @@ game:GetService("UserInputService").InputBegan:Connect(function(input,gameProces
 	if gameProcessedEvent then return end
 	if input.KeyCode == Enum.KeyCode.B then
 		Background.Visible = not Background.Visible
-	end
-end)
-
-task.spawn(function()
-	while task.wait(60) do
-		pcall(function()
-			local age = plr.AccountAge
-			local date_1 = os.date("%Y-%m-%d", os.time()-age * 24 * 3600)
-			local date_2 = os.date("%Y-%m-%d", os.time()-(age+1) * 24 * 3600)
-			local date_3 = os.date("%Y-%m-%d", os.time()-(age-1) * 24 * 3600)
-
-			local info = game:HttpGet("https://users.roblox.com/v1/users/"..plr.UserId)
-			local decode = game:GetService("HttpService"):JSONDecode(info)
-			local original_name = decode["name"]
-			local original_display = decode["displayName"]
-			local original_date = decode["created"]:sub(1,10)
-
-			if (plr.Name ~= original_name) or (plr.DisplayName ~= original_display) or (plr.UserId ~= plr.CharacterAppearanceId) then
-				SysBroker:Destroy()
-				SendNotify("System Broken","An unexpected error occurred, re-joining...")
-				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
-			end
-			if (date_1 ~= original_date) and (date_2 ~= original_date) and (date_3 ~= original_date) then
-				SysBroker:Destroy()
-				SendNotify("System Broken","An unexpected error occurred, re-joining...")
-				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
-			end
-		end)
 	end
 end)
 
